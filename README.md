@@ -1,2 +1,2 @@
-taikorecord　 を使用するには
+taikorecord　を使用するには
 /taikorecord をURLの後ろにつける
