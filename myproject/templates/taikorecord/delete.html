@@ -1,0 +1,18 @@
+{%load static%}
+<head>
+    <title>{{ music.title }}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'taikorecord/style.css' %}">
+</head>
+<form method="POST">
+    {% csrf_token %}
+    {{obj.music}}<br>
+    <div class="delete">
+    <h1>{{obj.title}}</h1>
+    <p>⚠消してもよろしいですか？</p><br>
+    
+    <button class="btn btn-border-shadow btn-border-shadow--color" type="submit">OK</button>
+    <a class="btn btn-border-shadow btn-border-shadow--color" href="{% url 'taikorecord:index' %}">トップへ戻る</a>
+    </div>
+</form>

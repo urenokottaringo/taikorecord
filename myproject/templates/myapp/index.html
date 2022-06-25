@@ -1,0 +1,16 @@
+{% if movie_list %}
+<table border="1">
+    <tr><th>タイトル</th><th>監督</th><th>日付</th></tr>
+    {% for movie in movie_list %}
+    <tr>
+        <td><a href="{% url 'myapp:movie_detail' movie.id %}">{{ movie.title }}</a></td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.watch_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<a href="{% url 'myapp:registerdirector' %}">Register Director</a><br>
+<a href="{% url 'myapp:registermovie' %}">Register Movie</a><br>
+<a href="{% url 'myapp:writinglog' %}">Writing Log</a>

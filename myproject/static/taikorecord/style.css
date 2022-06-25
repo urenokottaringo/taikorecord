@@ -1,0 +1,118 @@
+
+body{
+    font-family:'Hiragino Maru Gothic Pro', Arial, Helvetica, sans-serif;
+}
+.index h1 {
+    color: whitesmoke;
+    font-size: 60px;
+    background-color: orangered;
+    text-align: center;
+    font-family:'Hiragino Maru Gothic Pro', 'Times New Roman', Times, serif;
+}
+.detail h1 {
+    background-color:beige;
+}
+.delete h1 {
+    background-color:beige;
+}
+
+.delete p {
+    font-size:40px;
+}
+
+
+a:before{
+    font-size:15px;
+}
+a:hover{
+    font-size: 20px
+}
+.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+.btn-border-shadow:before {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+  
+    width: 100%;
+    height: 100%;
+  
+    content: "";
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  
+    border: 3px solid #000;
+    border-radius: 0.5rem;
+  }
+  
+.btn-border-shadow:hover {
+    padding: calc(1.5rem - 6px) 3rem;
+  }
+  
+.btn-border-shadow:hover:before {
+    top: 0;
+    left: 0;
+  }
+  
+.btn-border-shadow--color {
+    border-radius: 0;
+    background: yellow;
+  }
+  
+.btn-border-shadow--color:before {
+    border-radius: 0;
+  }
+
+table.design {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    height: 400px;
+
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #cdf4f0;
+}
+
+table.design tr:nth-child(2n+1) {
+    background: #e9faf9;
+}
+table.design th {
+    padding: 10px;
+    border: solid 1px #ffffff;
+    background: #778ca3;
+    color: #ffffff;
+    text-align: center;
+}
+table.design td {
+    padding: 10px;
+    border: solid 1px #ffffff;
+    text-align: center;
+}
+
+.memo {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;
+}

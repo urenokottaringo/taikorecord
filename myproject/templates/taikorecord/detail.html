@@ -1,0 +1,27 @@
+
+{%load static%}
+<head>
+    <title>{{ music.title }}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'taikorecord/style.css' %}">
+</head>
+<div class="detail">
+<h1>{{ music.title }}</h1>
+<h2>{{ music.genre }} / {{ music.diff }}</h2>
+<h3>{{ music.result_date }}達成</h3>
+
+<div class="memo">
+{% for log in music.log.all %}
+    <li>
+        {{ log.text }}
+        <button onclick="location.href='{% url 'taikorecord:updatelog' log.id %}'">✎</button>
+        <button onclick="location.href='{% url 'taikorecord:deletelog' log.id %}'">✗</button>
+    </li><br>
+{% endfor %}
+</div>
+
+<a class="btn btn-border-shadow btn-border-shadow--color" href="{% url 'taikorecord:writingthismusiclog' music.id %}">メモを追加する</a>
+<a class="btn btn-border-shadow btn-border-shadow--color" href="{% url 'taikorecord:deletemusic' music.id %}">この曲を削除する</a>
+<a class="btn btn-border-shadow btn-border-shadow--color" href="{% url 'taikorecord:index' %}">トップへ戻る</a>
+</div>

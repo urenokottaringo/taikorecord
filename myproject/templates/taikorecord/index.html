@@ -1,0 +1,38 @@
+
+<html>
+{%load static%}
+    <head>
+        <title>全良リスト</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'taikorecord/style.css' %}">
+    </head>
+    <body>
+    <div class="index">
+        <h1>太鼓の達人全良リスト</h1>
+        <h2>難易度順(鬼)に並んでいます。</h2>
+        <p></p>
+        {% if music_list %}
+        <table class="design" border="1">
+            <tr><th>曲名</th><th>ジャンル</th><th>日付</th><th>難易度</th></tr>
+            {% for music in music_list %}
+            <tr>
+                <td><a class="hov" href="{% url 'taikorecord:music_detail' music.id %}">{{ music.title }}</a></td>
+                <td>{{ music.genre }}</td>
+                <td>{{ music.result_date }}</td>
+                <td>{{ music.diff }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+
+        <button  class="btn btn-border-shadow btn-border-shadow--color" onclick="location.href='{% url 'taikorecord:registermusic' %}'">曲を追加する</button>
+        <!--<button class="btn btn-border-shadow btn-border-shadow--color" onclick="location.href='{% url 'taikorecord:writinglog' %}'">メモを追加する</button>-->
+        <!--
+        <a href="{% url 'taikorecord:registergenre' %}">Register Genre</a><br>
+        -->
+        <!--ジャンルの登録はadminで-->
+        
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<form method="POST">
+    {% csrf_token %}
+    {{obj.movie}}<br> # logを消すときこちらが表示される
+    {{obj.text}}<br>
+------------------------------<br>
+    {{obj.title}}<br> # movieを消すときこちらが表示される
+    {{obj.director}}<br>
+    Do you want to delete it?<br>
+    <button type="submit">OK</button>
+</form>
