@@ -1,6 +1,17 @@
-<h1>曲の登録</h1>
+{%load static%}
+<head>
+    <title>登録</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'taikorecord/style.css' %}">
+</head>
+<body>
+<h1 class="register">曲の登録</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">登録！</button>
+    <p>(入力例:2022-03-01)</p>
+    <button class="btn btn-border-shadow btn-border-shadow--color" type="submit">登録！</button>
+    <a class="btn btn-border-shadow btn-border-shadow--color" href="{% url 'taikorecord:index' %}">トップへ戻る</a>
 </form>
+</body>

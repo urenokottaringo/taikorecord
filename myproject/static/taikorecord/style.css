@@ -9,18 +9,53 @@ body{
     text-align: center;
     font-family:'Hiragino Maru Gothic Pro', 'Times New Roman', Times, serif;
 }
+
 .detail h1 {
     background-color:beige;
 }
 .delete h1 {
     background-color:beige;
 }
-
+h1.register{
+    background-color:beige;
+}
 .delete p {
     font-size:40px;
 }
 
+td.namco {
+    background-color: orangered;
+    
+}
+td.gamemusic {
+    background-color: plum;
 
+}
+
+td.variety {
+    background-color: lightgreen;
+
+}
+td.vocaloid {
+    background-color: lightgray;
+
+}
+td.classic {
+    background-color: burlywood;
+
+}
+td.kids {
+    background-color: orange;
+
+}
+td.anime {
+    background-color: pink;
+
+}
+td.pops {
+    background-color: lightskyblue;
+
+}
 a:before{
     font-size:15px;
 }

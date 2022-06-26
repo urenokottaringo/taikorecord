@@ -9,16 +9,33 @@
     </head>
     <body>
     <div class="index">
-        <h1>太鼓の達人全良リスト</h1>
+        <h1>太鼓の達人　全良リスト</h1>
+        
+        <h2>「曲を追加」から、全良した曲を追加することができます。</h2>
         <h2>難易度順(鬼)に並んでいます。</h2>
-        <p></p>
         {% if music_list %}
         <table class="design" border="1">
             <tr><th>曲名</th><th>ジャンル</th><th>日付</th><th>難易度</th></tr>
             {% for music in music_list %}
             <tr>
                 <td><a class="hov" href="{% url 'taikorecord:music_detail' music.id %}">{{ music.title }}</a></td>
-                <td>{{ music.genre }}</td>
+                {% if music.genre|stringformat:"s" == "ナムコオリジナル" %}
+                <td class="namco">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "ポップス" %}
+                <td class="pops">{{music.genre}}</td>
+                {% elif music.genre|stringformat:"s" == "クラシック" %}
+                <td class="classic">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "ゲームミュージック" %}
+                <td class="gamemusic">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "キッズ"%}
+                <td class="kids">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "アニメ" %}
+                <td class="anime">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "バラエティ" %}
+                <td class="variety">{{ music.genre }}</td>
+                {% elif music.genre|stringformat:"s" == "ボーカロイド"%}
+                <td class="vocaloid">{{ music.genre }}</td>
+                {% endif %}
                 <td>{{ music.result_date }}</td>
                 <td>{{ music.diff }}</td>
             </tr>
