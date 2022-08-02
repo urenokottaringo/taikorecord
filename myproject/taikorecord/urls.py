@@ -3,7 +3,11 @@ from . import views
 
 app_name = 'taikorecord'
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('',views.Login,name='Login'),
+    path('logout',views.Logout,name='Logout'),
+    path('createAccount',views.AccountRegistration.as_view(), name='createAccount'),
+    path('home', views.home, name='home'),
+    path('index/', views.IndexView.as_view(), name='index'),
     path('musicdetail/<int:pk>/', views.musicdetail, name='music_detail'),
     path('register/genre/', views.registergenre, name='registergenre'),
     path('register/music/', views.registermusic, name='registermusic'),

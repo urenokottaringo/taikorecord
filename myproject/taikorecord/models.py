@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone #時間を扱うための道具を持ってくる
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -28,3 +28,16 @@ class Log(models.Model): #Log
     music = models.ForeignKey(Music, on_delete=models.CASCADE, verbose_name="曲名", related_name='log')
     def __str__(self):            #muiscというfieldは「Musicという表」から紐付けして持ってきますよという宣言
         return self.text          #self.textで管理サイトを使ってデータ入力したときに入力した内容で表示される
+
+class Account(models.Model):
+
+    # ユーザー認証のインスタンス(1vs1関係)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    # 追加フィールド
+    last_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    account_image = models.ImageField(upload_to="profile_pics",blank=True)
+
+    def __str__(self):
+        return self.user.username
